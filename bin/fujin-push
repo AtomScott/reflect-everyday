@@ -1,0 +1,12 @@
+git checkout gh-pages
+for filename in ./docs/**; do
+        git checkout master -- $filename
+done
+
+cd docs
+for filename in **; do
+        mv $filename ../$filename
+done
+
+cd ..
+git checkout master
